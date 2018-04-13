@@ -74,8 +74,10 @@
 		<splash src="res/screen/ios/screen-iphone-portrait-736h@3x.png" platform="ios" width="1242" height="2208" />
 		<splash src="res/screen/ios/screen-ipad-portrait.png" platform="ios" width="768" height="1024" />
         <splash src="res/screen/ios/screen-ipad-portrait-2x.png" platform="ios" width="1536" height="2048" />
-		<splash src="res/screen/ios/screen-ipad-pro-portrait.png" platform="ios" width="2048" height="2732" />		
-		<access origin="*"/>
+		<splash src="res/screen/ios/screen-ipad-pro-portrait.png" platform="ios" width="2048" height="2732" />
+		<gap:plugin name="com.indigoway.cordova.whitelist.whitelistplugin" />
+		<feature name="http://api.phonegap.com/1.0/network"/>
+		<access origin="http://*" />
 		<allow-navigation href="*" />
 		<allow-intent href="tel:*" />
     	<allow-intent href="sms:*" />
