@@ -14,11 +14,18 @@
 		});
     $(function(){
 		
+		  if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
 		  var ww = ( $(window).width() < window.screen.width ) ? $(window).width() : window.screen.width;
 		  var mw = 1080;
 		  var ratio =  ww / mw;
 		  $('#Viewport').attr('content', 'initial-scale=' + ratio + ', maximum-scale=' + ratio + ', minimum-scale=' + ratio + ', user-scalable=yes, width=' + ww);
-		
+		}else{
+			var ww = ( $(window).width() < window.screen.width ) ? $(window).width() : window.screen.width;
+		  var mw = 1080;
+		  var ratio =  ww / mw;
+		  $('#Viewport').attr('content', 'initial-scale=' + ratio + ', maximum-scale=' + ratio + ', minimum-scale=' + ratio + ', user-scalable=no, width=device-width, target-densitydpi=device-dpi');
+		  
+		}
 	});
 
 		document.addEventListener("deviceready", onDeviceReady, false);
