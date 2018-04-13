@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bảo Việt</title>
+	<meta id="Viewport" name="viewport">
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="plugins/jquery-3.1.1.min.js"></script>
+    <script src="cordova.js"></script>
+	<script type="text/javascript">
+    document.addEventListener('deviceready', function() {
+ 		 	setTimeout(function() { navigator.splashscreen.hide(); }, 3000);
+		});
+    $(function(){
+		if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+		  var ww = ( $(window).width() < window.screen.width ) ? $(window).width() : window.screen.width;
+		  var mw = 1080;
+		  var ratio =  ww / mw;
+		  $('#Viewport').attr('content', 'initial-scale=' + ratio + ', maximum-scale=' + ratio + ', minimum-scale=' + ratio + ', user-scalable=yes, width=' + ww);
+		}
+	});
+
+		document.addEventListener("deviceready", onDeviceReady, false);
+		function onDeviceReady() {
+
+			StatusBar.hide();
+
+			var db = openDatabase('mca_db', '1.0', 'mca database', 50 * 1024 * 1024);
+
+			db.transaction(function (tx) {
+
+			tx.executeSql('CREATE TABLE IF NOT EXISTS mca_articles (id INTEGER NOT NULL PRIMARY KEY, title VARCHAR(255), article TEXT)');
+
+			});
+		}
+	</script>
+</head>
+<body class="color_white">
+	<ul id="menu"></ul>
+
+    <div id="page" class="color_pattern">
+
+		<div class="top_bg">
+			<a href="search.html" class="s2"><img src="images/icon_search.png" width="94" height="87" class="s1" style="left:200px;"></a>
+			<a href="#" id="toggle-menu" class="s2"><img src="images/icon_menu.png" width="94" height="87" class="s1" style="left:60px;"></a>
+			<a href="index.html" class="logo"><img src="images/top_logo.png" width="422" height="100"></a>
+		</div>
+
+		<div class="main">
+
+			<div class="loading_spinner"><img src="images/loading.gif" width="128" height="128"></div>
+        	<link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<div class="holder">
+	<div class="topbar blue">
+		<h1>Share Performance</h1>
+	</div>
+	<div class="inbar">
+		<div> <p class="dam" style="text-align:center;">Bao Viet Stock</p></div>
+		<ul class="share-per">
+			<li class="col-1"><p>Last Price (RM)</p><p class="dam">1.686</p></li>
+			<li class="col-2"><p>Change</p><p class="dam">0.023</p></li>
+			<li class="col-3"><p>% Change</p><p class="dam">1.2</p></li>
+		</ul>
+		<div style="clear:both"></div>
+	</div>
+</div>
+<div class="holder">
+	<div class="topbar blue">
+		<h1>Last Announcements</h1>
+	</div>
+	<div class="inbar">
+		<ul>
+			<li><p class="p1">Jan 30, 2018</p> <p class="p2">Disclosure on Baoviet’ Holdings Q4.2017 unaudited separate and consolidated financial statements</p></li>
+			<li><p class="p1">Dec 08, 2017</p> <p class="p2"> Disclosure on Baoviet’ Holdings QIII.2017 audited separate and consolidated financial statements</p></li>
+			<li><p class="p1">Nov 06, 2017</p> <p class="p2"> Disclosure on Baoviet’ Holdings QIII.2017 unaudited separate and consolidated financial statements</p></li>
+			<!--<li><span>Aug 29, 2017</span> <p>Disclosure on Baoviet’ Holdings QII.2017 audited separate and consolidated financial statements</p></li>
+			<li><span>Jul 28, 2017</span> <p>Disclosure on Baoviet’ Holdings QII.2017 unaudited separate and consolidated financial statements</p></li>-->
+		</ul>
+		<div style="clear:both"></div>
+	</div>
+</div>
+<div class="holder">
+	<div class="topbar blue">
+		<h1>Latest Financials</h1>
+	</div>
+	<div class="inbar">
+		<div class="report1"><img src="images/rp.png" width="100" height="100" float="left"><p> Integrated Report<p></div>
+		<div class="report1"><img src="images/rp.png" width="100" height="100"><p>Sustainable Development Report</p></div>
+	</div>
+</div>
+    </div>
+	</div>
+    <script src="plugins/menu.js"></script>
+    <script src="plugins/language.js"></script>
+</body>
+</html>
