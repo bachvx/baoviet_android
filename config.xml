@@ -4,7 +4,7 @@
 		id        = "com.MagazineContentApp"
 		versionCode="1"
 		version   = "1.0.0">
-		<name>BaoViet Demo</name>
+		<name>BaoViet Android</name>
 		<description>Demo app Bao Viet</description>
 		<author href="http://www.invedion.com" email="contact@invedion.com">INVEDION</author>
 		<preference name="phonegap-version" value="cli-8.0.0" />
